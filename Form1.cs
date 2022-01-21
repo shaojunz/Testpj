@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Play375
@@ -36,7 +30,7 @@ namespace Play375
         /// <param name="e"></param>
         private void btnBegin_Click(object sender, EventArgs e)
         {
-           try
+            try
             {
                 txtInfo.Clear();
                 pokerBoxinit();//牙签盒子里装牙签
@@ -46,8 +40,8 @@ namespace Play375
             {
                 this.Invoke(new setTxtContent(ShowLog), new object[] { ex.Message });
             }
-            
-           
+
+
         }
 
         /// <summary>
@@ -67,7 +61,7 @@ namespace Play375
         /// </summary>
         private void Getpoker()
         {
-            int userSelectedRow ;
+            int userSelectedRow;
             bool userOnedo = true;
             while (pokerCount() > 0)
             {
@@ -77,7 +71,7 @@ namespace Play375
                     if (pokerBox[userSelectedRow].Count > 0)
                     {
                         userOneTake(userSelectedRow);
-                        userOnedo =false;
+                        userOnedo = false;
                     }
                 }
                 else
