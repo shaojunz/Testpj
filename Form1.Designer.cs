@@ -41,6 +41,7 @@ namespace Play375
             this.txtInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtInfo.Size = new System.Drawing.Size(578, 343);
             this.txtInfo.TabIndex = 0;
+            this.txtInfo.Enabled = false;
             // 
             // btnBegin
             // 

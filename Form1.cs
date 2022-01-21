@@ -36,10 +36,18 @@ namespace Play375
         /// <param name="e"></param>
         private void btnBegin_Click(object sender, EventArgs e)
         {
-            txtInfo.Clear();
-            pokerBoxinit();
-            Getpoker();
-
+           try
+            {
+                txtInfo.Clear();
+                pokerBoxinit();//牙签盒子里装牙签
+                Getpoker();//取牙签
+            }
+            catch (Exception ex)
+            {
+                this.Invoke(new setTxtContent(ShowLog), new object[] { ex.Message });
+            }
+            
+           
         }
 
         /// <summary>
@@ -55,7 +63,7 @@ namespace Play375
         }
 
         /// <summary>
-        /// 拿牙签一人一次
+        /// 在有牙签盒子里一人一次拿牙签
         /// </summary>
         private void Getpoker()
         {
@@ -117,7 +125,7 @@ namespace Play375
         }
 
         /// <summary>
-        /// 取牙签计算
+        /// 计算牙签
         /// </summary>
         /// <param name="rowIndex"></param>
         /// <param name="operation"></param>
